@@ -16,7 +16,7 @@ basic.forever(function () {
             basic.pause(1000)
 
         }
-        basic.pause (1000)
+        basic.pause (500)
         cuteBot.moveTime(cuteBot.Direction.forward, 25, 0.7)
         cuteBot.moveTime(cuteBot.Direction.left, 15, 0.5)
         basic.pause(500)
