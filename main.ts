@@ -17,8 +17,8 @@ basic.forever(function () {
 
         }
         basic.pause (1000)
-        cuteBot.moveTime(cuteBot.Direction.forward, 30, 0.4)
-        cuteBot.moveTime(cuteBot.Direction.left, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.forward, 25, 0.7)
+        cuteBot.moveTime(cuteBot.Direction.left, 15, 0.5)
         basic.pause(500)
         sonar = cuteBot.ultrasonic(cuteBot.SonarUnit.Centimeters)
         while (sonar > 5 && sonar < 10) {
@@ -29,9 +29,9 @@ basic.forever(function () {
           
         }
         stop_if_line()
-        cuteBot.moveTime(cuteBot.Direction.forward, 30, 0.2)
+        cuteBot.moveTime(cuteBot.Direction.forward, 15, 0.2)
         basic.pause(1000)
-        cuteBot.moveTime(cuteBot.Direction.right, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.right, 15, 0.4)
     }
     else {
         follow_line()
@@ -102,13 +102,13 @@ function first_side() {
     basic.pause(1000)
     sonar = cuteBot.ultrasonic(cuteBot.SonarUnit.Centimeters)
     if (sonar > 5 && sonar < 10) {
-        cuteBot.moveTime(cuteBot.Direction.backward, 30, 0.3)
+        cuteBot.moveTime(cuteBot.Direction.backward, 15, 0.3)
         basic.pause(2000)
-        cuteBot.moveTime(cuteBot.Direction.right, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.right, 15, 0.4)
         basic.pause(2000)
         cuteBot.moveTime(cuteBot.Direction.forward, 20, 0.5)
         basic.pause(2000)
-        cuteBot.moveTime(cuteBot.Direction.left, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.left, 15, 0.4)
         basic.pause(2000)
         basic.showIcon(IconNames.Heart)
     }
@@ -117,11 +117,11 @@ function second_side() {
     sonar = cuteBot.ultrasonic(cuteBot.SonarUnit.Centimeters)
     basic.pause(500)
     if (sonar > 5 && sonar < 10) {
-        cuteBot.moveTime(cuteBot.Direction.right, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.right, 15, 0.4)
         basic.pause(1000)
-        cuteBot.moveTime(cuteBot.Direction.forward, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.forward, 15, 0.4)
         basic.pause(1000)
-        cuteBot.moveTime(cuteBot.Direction.left, 30, 0.4)
+        cuteBot.moveTime(cuteBot.Direction.left, 15, 0.4)
         basic.pause(500)
         basic.clearScreen()
     }
@@ -133,12 +133,12 @@ function stop_if_line() {
 }
 function follow_line() {
     if (cuteBot.tracking(cuteBot.TrackingState.L_unline_R_line)) {
-        cuteBot.motors(40, 15)
+        cuteBot.motors(30, 15)
     }
     if (cuteBot.tracking(cuteBot.TrackingState.L_line_R_unline)) {
-        cuteBot.motors(15, 40)
+        cuteBot.motors(15, 30)
     }
     if (cuteBot.tracking(cuteBot.TrackingState.L_R_line)) {
-        cuteBot.motors(40, 40)
+        cuteBot.motors(30, 30)
     }
 }
